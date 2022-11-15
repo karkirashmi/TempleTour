@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+    <style>
+        .heading {
+            background-color: black;
+            padding: 20px;
+            color: white;
+        }
+
+        .content{
+            padding: 30px;
+            box-sizing: border-box;
+            border-right: 20px solid salmon;
+            border-bottom: 20px solid salmon;
+            border-left: 10px solid  rgb(158, 158, 25);
+            border-top: 10px solid rgb(158, 158, 25);
+
+        }
+        button{
+            padding-top: 10px ;
+            padding-bottom: 10px;
+            padding-left: 30%;
+            padding-right: 30%;
+        }
+        form{
+            padding: 32px 0px;
+            background-color: rgb(208, 208, 208);
+        }
+        
+
+        .v2{
+          border-left: 2px solid white;
+          height: 85px;
+          position: absolute;
+          left: 65%;
+        }
+        .v1{
+          border-left: 2px solid white;
+          height: 85px;
+          position: absolute;
+          left: 35%;
+        }
+        table{
+            padding: 0px  160px;
+        }
+        td{
+            padding: 0px 80px;
+        }
+
+        
+        .footer{
+            color: white;
+            background-color: black;
+            padding: 10px 5px;
+        }
+    </style>
+    <script>
+      function validateform(){
+        let x= document.myform.message.value;
+        let y= document.myform.email.value;
+        var atposition=y.indexof("@");
+        var dotposition=y.indexof(".");
+        if(x.length<5){
+            alert("please enter the message of atleast length 10");
+            return false;
+        }
+        if(atposition<1 || dotposition<atposition+2 || dotposition+2 >= y.length){
+            alert("please enter valid email");
+            return false;
+        }
+
+      }
+    </script>
+</head>
+
+<body>
+    <div class="heading">
+        <CENTER><H1><b>GET IN TOUCH:</b></H1></CENTER>
+    </div>
+    <div class="content">
+        <center><form name="myform" method="post"  action="#" onsubmit="return validateform()">
+            <label for="fname">First name:</label>
+            <input type="text"  name="fname" placeholder="enter your first name" size="60" required><br><br>
+            <label for="lname" >Last name:</label>
+            <input type="text" name="lname" placeholder="enter your last name" size="60" required><br><br>
+            <label for="email" >Email:</label>
+            <input type="text"  name="email" placeholder="enter your email" size="60" required><br><br>
+            <label for="message" >Message:</label><br>
+            <textarea  name="message" rows="8" cols="100"> </textarea><br><br>
+            <button onclick="validateform()"><b>SUBMIT</b></button>
+       
+        </form>
+    </center>
+    </div>
+    <div class="footer">
+        <table>
+            <tr>
+                <td>
+                    <b>THANKS FOR VISITING</b>  
+                </td>
+                <div class="v1"></div>
+                <td>
+                 <a href="temple.html"> TEMPLE</a><BR>
+                    Site By RASHMI KARKI | COPYRIGHT@2022
+                </td>
+                <div class="v2"></div>
+                <td>
+                    <b>FOLLOW US</b><br>
+                    Instagram<br>Facebook<br>Linkedin<br>
+                </td>
+            </tr>
+        </table>
+        <br><center><b>TERMS AND CONDITIONS | PRIVACY | LEGAL NOTICE</b></center>
+       </div>
+
+
+</body>
+
+</html>
